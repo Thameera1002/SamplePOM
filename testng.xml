@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test parallel="methods" thread-count="2" verbose="2" preserve-order="true" name="C:/UCSC_25B3/Day05_25B3/src/test/java/pom/tests/EbaySearchTest.java">
+        <classes>
+            <class name="pom.tests.EbaySearchTest">
+                <methods>
+                    <include name="mobileSearchTest"/>
+                    <include name="dressResultTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
