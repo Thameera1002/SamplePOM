@@ -32,8 +32,10 @@ public class BrowserFactory {
     }
 
     public void quitDriver(){
-        tlWebDriver.get().quit();
-        tlWebDriver.remove();
+        if(tlWebDriver.get()!=null){
+            tlWebDriver.get().quit();
+            tlWebDriver.remove();
+        }
     }
 
 }
