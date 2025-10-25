@@ -10,6 +10,8 @@ public class EbayHomePage extends BasePage{
     public EbayHomePage(WebDriver driver) {
         super(driver);
     }
+
+    String dropdownValue;
     @FindBy(id="gh-ac")
     WebElement ebaySearchBox;
 
@@ -28,12 +30,20 @@ public class EbayHomePage extends BasePage{
         type(ebaySearchBox,value);
     }
 
-    public MobileResultPage clickOnSearchButton(){
-        click(searchButton);
-        return PageFactory.initElements(driver, MobileResultPage.class);
+    public <T> T clickOnSearchButton(){
+        if (dropdownValue.equalsIgnoreCase(" Cell Phones & Accessories")){
+            click(searchButton);
+            return PageFactory.initElements(driver, (Class<T>)MobileResultPage.class);
+        }else if (dropdownValue.equalsIgnoreCase(" Clothing, Shoes & Accessories")){
+            click(searchButton);
+            return PageFactory.initElements(driver, (Class<T>)ClothResultPage.class);
+        }
+        return null;
+
     }
 
     public void selectDDValue(String value){
+        dropdownValue = value;
         selectDDValueByVisibleText(categoryDD,value);
     }
 
