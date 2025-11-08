@@ -1,5 +1,6 @@
 package pom.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,10 +27,12 @@ public class EbayHomePage extends BasePage{
 //    public void test(){
 //        WebElement element = driver.findElement(searchBox);
 //    }
+    @Step("Enter value for search box")
     public void enterValueForSearchBox(String value){
         type(ebaySearchBox,value);
     }
 
+    @Step("Click on search button")
     public <T> T clickOnSearchButton(){
         if (dropdownValue.equalsIgnoreCase(" Cell Phones & Accessories")){
             click(searchButton);
@@ -42,6 +45,7 @@ public class EbayHomePage extends BasePage{
 
     }
 
+    @Step("Select Dropdown value")
     public void selectDDValue(String value){
         dropdownValue = value;
         selectDDValueByVisibleText(categoryDD,value);
