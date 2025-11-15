@@ -40,6 +40,7 @@ public class EbayHomePage extends BasePage{
         }else if (dropdownValue.equalsIgnoreCase(" Clothing, Shoes & Accessories")){
             click(searchButton);
             System.out.println("Clicked updated 1");
+            System.out.println("Test modification");
             return PageFactory.initElements(driver, (Class<T>)ClothResultPage.class);
         }
         return null;
